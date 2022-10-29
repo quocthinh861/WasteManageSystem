@@ -1,0 +1,12 @@
+.dashboard-section .card {
+    margin-bottom: 20px;
+}
+
+.dashboard-section .card-header {
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.db-table.db-settings .update-btn {
+    margin-right: 5px;
+}
