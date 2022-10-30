@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, { useState } from 'react'
+import './style.css'
 import {
   CAvatar,
   CButton,
@@ -99,7 +100,7 @@ const AppVehicle = () => {
   ]
 
   return (
-    <>
+    <section className="vehicle-section">
       <CRow>
         <CCol xs>
           <CCard>
@@ -169,7 +170,7 @@ const AppVehicle = () => {
           </CCard>
         </CCol>
       </CRow>
-    </>
+    </section>
   )
 }
 

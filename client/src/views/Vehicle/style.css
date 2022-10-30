@@ -1,0 +1,8 @@
+.vehicle-section .card-header {
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.vehicle-section .update-btn {
+    margin-right: 5px;
+}
