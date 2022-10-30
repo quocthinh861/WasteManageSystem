@@ -1,8 +1,12 @@
 /* eslint-disable prettier/prettier */
-import React from 'react'
+import React, { useState } from 'react'
 import {
     CAvatar,
     CButton,
+    CCardTitle,
+    CCardSubtitle,
+    CCardText,
+    CCardLink,
     CButtonGroup,
     CCard,
     CCardBody,
@@ -21,9 +25,9 @@ import {
     CFormLabel,
     CFormInput,
     CFormText,
-    CCardSubtitle,
     CCollapse,
-    CBadge
+    CBadge,
+    CImage
   } from '@coreui/react'
 import {
     cibCcAmex,
@@ -54,8 +58,10 @@ import avatar3 from 'src/assets/images/avatars/3.jpg'
 import avatar4 from 'src/assets/images/avatars/4.jpg'
 import avatar5 from 'src/assets/images/avatars/5.jpg'
 import avatar6 from 'src/assets/images/avatars/6.jpg'
+import EmployeeRow from 'src/components/employee/EmployeeRow'
 
 const Employee = () => {
+    const [visible, setVisible] = useState(false)
     const tableExample = [
         {
           avatar: { src: avatar1, status: 'success' },
@@ -126,7 +132,7 @@ const Employee = () => {
             registered: 'Jan 1, 2021',
             phone: '0977077629',
             email: 'Bomavt11@gmail.com',
-            status: <CBadge color="secondary">Active</CBadge>
+            status: <CBadge color="secondary">Inactive</CBadge>
         },
           role: { name: 'Janitor' },
           usage: {
@@ -146,7 +152,7 @@ const Employee = () => {
             registered: 'Jan 1, 2021',
             phone: '0921666111',
             email: 'Brherjfe1@gmail.com',
-            status: <CBadge color="secondary">Active</CBadge>
+            status: <CBadge color="secondary">Inactive</CBadge>
           },
           role: { name: 'Collector' },
           usage: {
@@ -189,36 +195,13 @@ const Employee = () => {
                         <CTableHeaderCell>Contact</CTableHeaderCell>
                         <CTableHeaderCell>Hired Date</CTableHeaderCell>
                         <CTableHeaderCell>Status</CTableHeaderCell>
+                        <CTableHeaderCell></CTableHeaderCell>
                     </CTableRow>
                     </CTableHead>
                     <CTableBody>
                     {tableExample.map((item, index) => (
                         <>
-                        <CTableRow v-for="item in tableItems" key={index}>
-                            <CTableDataCell>
-                            <div>#{item.user.id}</div>
-                            <div className="small text-medium-emphasis">
-                                {/* <span>{item.user.new ? 'New' : 'Recurring'}</span> | Registered:{' '}
-                                {item.user.registered} */}
-                            </div>
-                            </CTableDataCell>
-                            <CTableDataCell className="text-center">
-                            <div>{item.user.name}</div>
-                            </CTableDataCell>
-                            <CTableDataCell>
-                            <div>{item.role.name}</div>
-                            </CTableDataCell>
-                            <CTableDataCell>
-                            <div>{item.user.phone}</div>
-                            <div>{item.user.email}</div>
-                            </CTableDataCell>
-                            <CTableDataCell>
-                                <div>{item.user.registered}</div>
-                            </CTableDataCell>
-                            <CTableDataCell>
-                                {item.user.status}
-                            </CTableDataCell>
-                        </CTableRow>
+                          <EmployeeRow item={item}></EmployeeRow>
                         </>
                     ))}
                     </CTableBody>
