@@ -4,13 +4,17 @@
 }
 
 .employee-section .avatar-container {
-    margin-right: 20px;
+    margin: 0px 20px 0px 10px;
 }
 
 .employee-section .detail-container .update-btn {
     margin-right: 5px;
 }
 
+.employee-section .detail-container .assign-btn {
+    margin-top: 5px;
+}
+
 .employee-section .info-container {
-    padding: 10px 0;
+    padding: 15px 0;
 }

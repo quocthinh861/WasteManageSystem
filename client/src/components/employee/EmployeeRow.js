@@ -92,9 +92,9 @@ const EmployeeRow = (props) => {
           </CButton>
         </CTableDataCell>
       </CTableRow>
-      {visible && (
-        <CTableRow v-for="item in tableItems" key={props.index}>
-          <CTableDataCell colSpan={100}>
+      <CTableRow>
+        <CTableDataCell colSpan={100} className="p-0">
+          <CCollapse visible={visible}>
             <div className="d-flex info-container">
               <div className="avatar-container">
                 <CImage
@@ -112,11 +112,15 @@ const EmployeeRow = (props) => {
                 <CButton size="sm" color="danger" className="text-white delete-btn">
                   Delete
                 </CButton>
+                <br/>
+                <CButton size="sm" color="warning" className="text-white assign-btn">
+                  Assign Tasks
+                </CButton>
               </div>
             </div>
-          </CTableDataCell>
-        </CTableRow>
-      )}
+          </CCollapse>
+        </CTableDataCell>
+      </CTableRow>
     </>
   )
 }
