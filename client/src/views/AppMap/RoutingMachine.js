@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import L from 'leaflet'
 import { createControlComponent } from '@react-leaflet/core'
 import 'leaflet-routing-machine'
+import 'lrm-graphhopper'
 import depot from '../../assets/images/icons/Depot.png'
 import mcp from '../../assets/images/icons/recycling-place.png'
 
@@ -34,6 +35,7 @@ const getMarkerOfficePopup = (params) => {
 }
 
 const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
+  
   const waypoints = [
     L.latLng(routeInfo.vertex[0].lati, routeInfo.vertex[0].longti),
     L.latLng(routeInfo.vertex[1].lati, routeInfo.vertex[1].longti),
@@ -41,6 +43,7 @@ const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
 
   const instance = L.Routing.control({
     waypoints: waypoints,
+    router: L.Routing.graphHopper(process.env.GRAPHHOPPER_API),
     routeLine: function (route) {
       var line = L.Routing.line(route, {
         addWaypoints: false,
