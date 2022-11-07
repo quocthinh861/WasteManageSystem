@@ -6,7 +6,7 @@ import RoutineMachine from './RoutingMachine';
 const position = [10.7724483, 106.6582936];
 
 const maps = {
-  base: "https://api.maptiler.com/maps/basic-v2/256/{z}/{x}/{y}.png?key=gGCh0FCy8fIynFL9Aksz"
+  base: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 };
 
 const vextexMap = {
