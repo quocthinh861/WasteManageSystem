@@ -10,31 +10,43 @@ const maps = {
 };
 
 const vextexMap = {
-  A: [10.777823448181152, 106.65606689453125],
-  B: [10.748285429708451, 106.63473038607164],
-  C: [10.747325095957946, 106.64353901039668],
-  D: [10.754058881386277, 106.65132009782434],
+  A: {
+    lati: 10.777823448181152,
+    longti: 106.65606689453125,
+    address: '268 ly thuong kiet'
+  },
+  B: {
+    lati: 10.748285429708451,
+    longti: 106.63473038607164,
+    address: 'A'
+  },
+  C: {
+    lati: 10.747325095957946,
+    longti: 106.64353901039668,
+    address: 'B'
+  },
+  D: {
+    lati: 10.754058881386277,
+    longti: 106.65132009782434,
+    address: 'C'
+  },
 }
 
 const routeArray = [
   {
-    start: vextexMap.A,
-    end: vextexMap.B,
+    vertex: [vextexMap.A, vextexMap.B],
     color: 'red'
   },
   {
-    start: vextexMap.B,
-    end: vextexMap.C,
+    vertex: [vextexMap.B, vextexMap.C],
     color: 'blue'
   },
   {
-    start: vextexMap.C,
-    end: vextexMap.D,
+    vertex: [vextexMap.C, vextexMap.D],
     color: 'green'
   },
   {
-    start: vextexMap.D,
-    end: vextexMap.A,
+    vertex: [vextexMap.D, vextexMap.A],
     color: 'purple'
   }
 ]
