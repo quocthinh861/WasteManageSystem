@@ -35,6 +35,8 @@ const getMarkerOfficePopup = (params) => {
 }
 
 const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
+
+  console.log(process.env.REACT_APP_GRAPHHOPPER_API)
   
   const waypoints = [
     L.latLng(routeInfo.vertex[0].lati, routeInfo.vertex[0].longti),
@@ -43,7 +45,7 @@ const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
 
   const instance = L.Routing.control({
     waypoints: waypoints,
-    router: L.Routing.graphHopper(process.env.GRAPHHOPPER_API),
+    router: L.Routing.graphHopper(process.env.REACT_APP_GRAPHHOPPER_API),
     routeLine: function (route) {
       var line = L.Routing.line(route, {
         addWaypoints: false,
