@@ -36,18 +36,6 @@ const routeArray = [
   {
     vertex: [vextexMap.A, vextexMap.B],
     color: 'red'
-  },
-  {
-    vertex: [vextexMap.B, vextexMap.C],
-    color: 'blue'
-  },
-  {
-    vertex: [vextexMap.C, vextexMap.D],
-    color: 'green'
-  },
-  {
-    vertex: [vextexMap.D, vextexMap.A],
-    color: 'purple'
   }
 ]
 

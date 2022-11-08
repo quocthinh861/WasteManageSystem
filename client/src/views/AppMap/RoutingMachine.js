@@ -36,17 +36,18 @@ const getMarkerOfficePopup = (params) => {
 
 const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
 
-  console.log(process.env.REACT_APP_GRAPHHOPPER_API)
-  
   const waypoints = [
     L.latLng(routeInfo.vertex[0].lati, routeInfo.vertex[0].longti),
     L.latLng(routeInfo.vertex[1].lati, routeInfo.vertex[1].longti),
+    L.latLng(10.747325095957946, 106.64353901039668),
   ]
+
 
   const instance = L.Routing.control({
     waypoints: waypoints,
     router: L.Routing.graphHopper(process.env.REACT_APP_GRAPHHOPPER_API),
     routeLine: function (route) {
+      console.log(route)
       var line = L.Routing.line(route, {
         addWaypoints: false,
         extendToWaypoints: false,
@@ -65,16 +66,13 @@ const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
       return line
     },
     createMarker: (i, waypoint, n) => {
-
       var vextex = routeInfo.vertex[0];
-
       if (checkIsOfficeAddress(waypoint.latLng.lat, waypoint.latLng.lng)) {
         return L.marker(waypoint.latLng, {
           draggable: true,
           icon: icon,
         }).bindPopup(getMarkerOfficePopup({address: vextex.address}))
       }
-
       return L.marker(waypoint.latLng, {
         draggable: true,
         icon: iconMCP,
@@ -85,10 +83,6 @@ const createRoutineMachineLayer = ({ routeInfo, ...props }) => {
     routeWhileDragging: false,
     fitSelectedRoutes: false,
     showAlternatives: false,
-  })
-
-  instance.on('routeselected', function (e) {
-    return
   })
 
   return instance
