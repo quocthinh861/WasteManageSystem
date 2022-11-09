@@ -187,7 +187,7 @@ const Dashboard = () => {
               </div>
             </CCardHeader>
             <CCardBody>
-              <WidgetsBrand withCharts />
+              <WidgetsBrand />
             </CCardBody>
           </CCard>
         </CCol>

@@ -15,10 +15,21 @@ const _nav = [
     },
   },
   {
-    component: CNavItem,
+    component: CNavGroup,
     name: 'Employee',
-    to: '/employee',
     icon: <CIcon icon={cilPeople} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Employee Management',
+        to: '/employee',
+      },
+      {
+        component: CNavItem,
+        name: 'Add employee',
+        to: '/employee/addemployee',
+      },
+    ],
   },
   {
     component: CNavItem,

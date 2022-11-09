@@ -39,21 +39,9 @@ const WidgetsBrand = ({ withCharts }) => {
       <CCol>
         <CWidgetStatsD
           className="mb-4"
-          {...(withCharts && {
-            chart: (
-              <CChart
-                className="position-absolute w-100 h-100"
-                type="line"
-                data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                }}
-                options={chartOptions}
-              />
-            ),
-          })}
           icon={<i className="fa-solid fa-user-tie fa-4x text-white"></i>}
           values={[
-            { title: 'Role', value: 'Back officer' },
+            { title: 'Role', value: 'Officer' },
             { title: 'Qty', value: '459' },
           ]}
           style={{
@@ -65,18 +53,6 @@ const WidgetsBrand = ({ withCharts }) => {
       <CCol>
         <CWidgetStatsD
           className="mb-4"
-          {...(withCharts && {
-            chart: (
-              <CChart
-                className="position-absolute w-100 h-100"
-                type="line"
-                data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                }}
-                options={chartOptions}
-              />
-            ),
-          })}
           icon={<i className="fa-regular fa-user fa-4x text-white"></i>}
           values={[
             { title: 'Role', value: 'Janitor' },
@@ -91,18 +67,6 @@ const WidgetsBrand = ({ withCharts }) => {
       <CCol>
         <CWidgetStatsD
           className="mb-4"
-          {...(withCharts && {
-            chart: (
-              <CChart
-                className="position-absolute w-100 h-100"
-                type="line"
-                data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                }}
-                options={chartOptions}
-              />
-            ),
-          })}
           icon={<i className="fa-solid fa-user fa-4x text-white"></i>}
           values={[
             { title: 'Role', value: 'Collector' },
@@ -118,18 +82,6 @@ const WidgetsBrand = ({ withCharts }) => {
         <CWidgetStatsD
           className="mb-4"
           color="warning"
-          {...(withCharts && {
-            chart: (
-              <CChart
-                className="position-absolute w-100 h-100"
-                type="line"
-                data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                }}
-                options={chartOptions}
-              />
-            ),
-          })}
           icon={<i className="fa-solid fa-street-view fa-4x"></i>}
           values={[
             { title: 'Role', value: 'MCP' },
@@ -142,18 +94,6 @@ const WidgetsBrand = ({ withCharts }) => {
         <CWidgetStatsD
           className="mb-4"
           color="warning"
-          {...(withCharts && {
-            chart: (
-              <CChart
-                className="position-absolute w-100 h-100"
-                type="line"
-                data={{
-                  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-                }}
-                options={chartOptions}
-              />
-            ),
-          })}
           icon={<i className="fa-solid fa-truck fa-4x"></i>}
           values={[
             { title: 'Role', value: 'Trucks' },

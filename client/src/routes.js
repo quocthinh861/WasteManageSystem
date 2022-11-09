@@ -1,5 +1,6 @@
 import React from 'react'
 import AppMap from './views/AppMap/AppMap'
+import AddEmployee from './views/employee/AddEmployee'
 import AppVehicle from './views/Vehicle/AppVehicle'
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -59,6 +60,7 @@ const routes = [
   { path: '/employee', name: 'Employee', element: Employee },
   { path: '/map', name: 'Map', element: AppMap },
   { path: '/vehicle', name: 'Vehicle', element: AppVehicle },
+  { path: '/employee/addemployee', name: 'Add employee', element: AddEmployee },
 
   // { path: '/theme', name: 'Theme', element: Colors, exact: true },
   // { path: '/theme/colors', name: 'Colors', element: Colors },
