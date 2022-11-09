@@ -32,10 +32,21 @@ const _nav = [
     ],
   },
   {
-    component: CNavItem,
+    component: CNavGroup,
     name: 'Vehicle',
-    to: '/vehicle',
     icon: <CIcon icon={cilTruck} customClassName="nav-icon" />,
+    items: [
+      {
+        component: CNavItem,
+        name: 'Vehicle List',
+        to: '/vehicle',
+      },
+      {
+        component: CNavItem,
+        name: 'Add Vehicle',
+        to: '/vehicle/addvehicle',
+      },
+    ],
   },
   {
     component: CNavItem,
